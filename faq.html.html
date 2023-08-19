@@ -1,0 +1,97 @@
+<html>
+<head>
+<style>
+
+
+/* ------FAQ styling begins ----------*/
+.faqbox{
+background-color:#ABC8C7;
+opacity:0.8;
+border:2px solid #0D0221;
+font-family:"Times New Roman", Times, serif;
+padding:20px;
+color:#0D0221;
+}
+.answer{
+display:none;
+padding: 5px 0px;
+margin-bottom: 15px;
+}
+
+.faq-list-item{
+position:relative;
+margin:10px;
+border-bottom:1px solid #ccc;
+cursor:pointer;
+
+}
+
+.faq-list-item span{
+position: absolute;
+display:inline-block;
+top:15px;
+right:200px;
+font-size:20px;
+}
+/* ------FAQ styling ends----------*/
+</style> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$(function(){
+
+  $('.faq-list-item').click(function(){
+    var $answer = $(this).find('.answer');
+
+    if($answer.hasClass('open')) { 
+      $answer.removeClass('open');
+      // Use the slideUp() method to hide $answer
+      $answer.slideUp();
+      
+      // Find the <span> elements inside, then rewrite the content using the text() method
+      $(this).find('span').text('+');
+      
+    } else {
+      $answer.addClass('open'); 
+      // Use the slideDown() method to show $answer
+      $answer.slideDown();
+      $(this).find('span').text('-');
+      // Find the <span> elements inside, then rewrite the content using the text() method
+      
+      
+    }
+  });
+});
+
+
+</script>
+</head> 
+<body>
+<div class ="wrapper">
+<h1>FAQ</h1>
+<div class="faqbox">
+<ul> <li class='faq-list-item'> <h2>Are there flights available to Mumbai from Delhi?</h2> <span>+</span>
+
+ <div class='answer'><p> Yes there are a plenty of flights from Delhi to Mumbai to and fro.<p></div> </li> 
+
+<li class='faq-list-item'><h2>What is the best season to visit Mumbai?</h2>  <span>+</span>
+
+ <div class='answer'> <p>The weather is good year around to visit specially in winter season.</p></div> </li> 
+
+<li class='faq-list-item'><h2> Are there ferries from Mumbai to Goa?</h2> <span>+</span>
+
+ <div class='answer'><p> Yes there are ferries from Mumbai to Goa and to and fro.</p></div></li> 
+</ul>
+  
+</div>
+
+</div>
+  
+</ul>  
+  
+</div>
+  
+</div>
+  
+</body>  
+  
+</html>
